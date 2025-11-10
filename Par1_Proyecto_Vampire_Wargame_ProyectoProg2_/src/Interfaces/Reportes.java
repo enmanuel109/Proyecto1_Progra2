@@ -138,7 +138,10 @@ public class Reportes extends JFrame {
             lblTituloLogs.setFont(FuenteTabla.deriveFont(30f));
             label_Fondo_Logs.add(lblTituloLogs);
 
-            for (String log : LOG_IN.JugadorActual.getLOGSPLAYER()) {
+            ArrayList<String> logsOrdenados = new ArrayList<>(LOG_IN.JugadorActual.getLOGSPLAYER());
+            logsOrdenados = ordenarLogs(logsOrdenados, 0, logsOrdenados.size() - 1);
+
+            for (String log : logsOrdenados) {
                 JLabel lblLog = new JLabel(log, SwingConstants.CENTER);
                 lblLog.setFont(FuenteTabla.deriveFont(15f));
                 lblLog.setForeground(Color.lightGray);
@@ -229,12 +232,14 @@ public class Reportes extends JFrame {
         }
 
         ArrayList<PLAYER> copia = new ArrayList<>(activos);
-        ordenarRecursivo(copia, 0, copia.size() - 1);
+        ordenarRanking(copia, 0, copia.size() - 1);
         return copia;
     }
-
-    private static void ordenarRecursivo(ArrayList<PLAYER> lista, int inicio, int fin) {
-        if (inicio >= fin) return;
+    //Fundiones Recursivas
+    private static void ordenarRanking(ArrayList<PLAYER> lista, int inicio, int fin) {
+        if (inicio >= fin) {
+            return;
+        }
 
         for (int i = inicio; i < fin; i++) {
             PLAYER actual = lista.get(i);
@@ -245,7 +250,19 @@ public class Reportes extends JFrame {
             }
         }
 
-        ordenarRecursivo(lista, inicio, fin - 1);
+        ordenarRanking(lista, inicio, fin - 1);
+    }
+
+    private static ArrayList<String> ordenarLogs(ArrayList<String> logs, int inicio, int fin) {
+        if (inicio >= fin) {
+            return logs;
+        }
+
+        String temp = logs.get(inicio);
+        logs.set(inicio, logs.get(fin));
+        logs.set(fin, temp);
+
+        return ordenarLogs(logs, inicio + 1, fin - 1);
     }
 
 }
