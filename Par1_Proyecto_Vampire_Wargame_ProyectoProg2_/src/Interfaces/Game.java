@@ -2048,9 +2048,5 @@ public final class Game extends JFrame {
         return imagenRotada;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new Game().setVisible(true);
-        });
-    }
+   
 }
