@@ -10,7 +10,7 @@ package Interfaces;
  */
 public class Funciones_Players {
      public boolean ValidarPassword(String password) {
-        if (password.length() != 5) {
+        if (password.length() != 5 || password.contains(" ")) {
             return false;
         }
 

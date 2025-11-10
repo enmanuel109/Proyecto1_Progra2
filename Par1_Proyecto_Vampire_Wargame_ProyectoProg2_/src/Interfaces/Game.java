@@ -112,7 +112,7 @@ public final class Game extends JFrame {
     JButton BotonP2Atac;
     JButton botonGirar;
     JLabel LabelInfoAtaques;
-
+    private JButton botonRendirse;
     private boolean HombreLoboMovi = true;
     private Personaje HombreLoboAc;
 
@@ -194,7 +194,7 @@ public final class Game extends JFrame {
         Us1.setForeground(Color.WHITE);
         label_Fondo.add(Us1);
 
-        JButton botonRendirse = new JButton();
+        botonRendirse = new JButton();
         botonRendirse.setBounds(610, 135, 160, 40);
         botonRendirse.setText("Rendirse");
         botonRendirse.setForeground(Color.WHITE);
@@ -1119,13 +1119,13 @@ public final class Game extends JFrame {
                                 }
                                 if (objetivo instanceof Muerte) {
                                     CantMuerteOsc--;
-                                     if (CantMuerteOsc == 0) {
+                                    if (CantMuerteOsc == 0) {
                                         eliminarZombiesPorBando(false);
                                     }
                                 }
                                 if (objetivo instanceof Vampiro) {
                                     CantVampiroOsc--;
-                                   
+
                                 }
                                 break;
                             }
@@ -1205,7 +1205,7 @@ public final class Game extends JFrame {
                                     if (CantMuerte == 0) {
                                         eliminarZombiesPorBando(true);
                                     }
-                                    
+
                                 }
                                 if (objetivo instanceof Vampiro) {
                                     CantVampiro--;
@@ -1624,19 +1624,19 @@ public final class Game extends JFrame {
     }
 
     private void eliminarZombiesPorBando(boolean eliminarOscuro) {
-    for (int i = 0; i < FILAS; i++) {
-        for (int j = 0; j < COLUMNAS; j++) {
-            Personaje p = PersonajesTablero[i][j];
-            if (p instanceof Zombie) {
-                if ((eliminarOscuro && p.esOscuro()) || (!eliminarOscuro && !p.esOscuro())) {
-                    PersonajesTablero[i][j] = null;
-                    ListaTablero[i][j].setIcon(null);
-                    ListaTablero[i][j].setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        for (int i = 0; i < FILAS; i++) {
+            for (int j = 0; j < COLUMNAS; j++) {
+                Personaje p = PersonajesTablero[i][j];
+                if (p instanceof Zombie) {
+                    if ((eliminarOscuro && p.esOscuro()) || (!eliminarOscuro && !p.esOscuro())) {
+                        PersonajesTablero[i][j] = null;
+                        ListaTablero[i][j].setIcon(null);
+                        ListaTablero[i][j].setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                    }
                 }
             }
         }
     }
-}
 
     private boolean hayEspaciosVacios() {
         for (int fila = 0; fila < FILAS; fila++) {
@@ -1910,7 +1910,7 @@ public final class Game extends JFrame {
         if (timerGiroContinuo != null && timerGiroContinuo.isRunning()) {
             return;
         }
-
+        botonRendirse.setEnabled(true);
         if (Turno) {
             labelRuletaTemp = labelRuleta1;
             ruedaTemp = rueda1;
@@ -1933,6 +1933,7 @@ public final class Game extends JFrame {
         if (timerGiroContinuo != null) {
             timerGiroContinuo.stop();
         }
+        botonRendirse.setEnabled(false);
         boolean PersonajeEntablero = false;
         int resultado = 0;
         Random aleatorio = new Random();
@@ -1981,7 +1982,7 @@ public final class Game extends JFrame {
             } else {
                 BotonP2Atac.setVisible(false);
             }
-            
+
         }
 
         LabelInfoAtaques.setText("Resultado de Ruleta: " + PersonajePorRulta);
@@ -2048,5 +2049,4 @@ public final class Game extends JFrame {
         return imagenRotada;
     }
 
-   
 }
