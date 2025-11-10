@@ -175,7 +175,7 @@ public final class Game extends JFrame {
         //Labels de Elimindados y Rendirse 
         JLabel LabelEliUs1 = new JLabel("Enemigos Eliminados Claros");
         LabelEliUs1.setBounds(30, 170, 150, 80);
-        LabelEliUs1.setFont(new Font("Serif", Font.BOLD, 10));
+        LabelEliUs1.setFont(new Font("Serif", Font.BOLD, 9));
         LabelEliUs1.setForeground(Color.WHITE);
         label_Fondo.add(LabelEliUs1);
 
@@ -215,7 +215,7 @@ public final class Game extends JFrame {
 
         JLabel LabelRendirse = new JLabel("Enemigos Eliminados Oscuros");
         LabelRendirse.setBounds(645, 165, 200, 80);
-        LabelRendirse.setFont(new Font("Serif", Font.BOLD, 10));
+        LabelRendirse.setFont(new Font("Serif", Font.BOLD, 9));
         LabelRendirse.setForeground(Color.WHITE);
         label_Fondo.add(LabelRendirse);
 
