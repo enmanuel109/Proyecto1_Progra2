@@ -173,9 +173,9 @@ public final class Game extends JFrame {
         labelFondoinfo.add(Botonsig);
 
         //Labels de Elimindados y Rendirse 
-        JLabel LabelEliUs1 = new JLabel("Enemigos Eliminados");
+        JLabel LabelEliUs1 = new JLabel("Enemigos Eliminados Claros");
         LabelEliUs1.setBounds(30, 170, 150, 80);
-        LabelEliUs1.setFont(new Font("Serif", Font.BOLD, 13));
+        LabelEliUs1.setFont(new Font("Serif", Font.BOLD, 10));
         LabelEliUs1.setForeground(Color.WHITE);
         label_Fondo.add(LabelEliUs1);
 
@@ -213,9 +213,9 @@ public final class Game extends JFrame {
 
         label_Fondo.add(LabelInfoAtaques);
 
-        JLabel LabelRendirse = new JLabel("Enemigos Eliminados");
+        JLabel LabelRendirse = new JLabel("Enemigos Eliminados Oscuros");
         LabelRendirse.setBounds(645, 165, 200, 80);
-        LabelRendirse.setFont(new Font("Serif", Font.BOLD, 13));
+        LabelRendirse.setFont(new Font("Serif", Font.BOLD, 10));
         LabelRendirse.setForeground(Color.WHITE);
         label_Fondo.add(LabelRendirse);
 
@@ -324,12 +324,12 @@ public final class Game extends JFrame {
         TableroINFO.add(BotonPN);
 
         ImageIcon iconoBtnP1 = new ImageIcon(getClass().getResource("/imagenes/butoncambiado.png"));
-        Image imgBotonP1 = iconoBtnP1.getImage().getScaledInstance(180, 20, Image.SCALE_SMOOTH);
+        Image imgBotonP1 = iconoBtnP1.getImage().getScaledInstance(210, 20, Image.SCALE_SMOOTH);
         BotonP1 = new JButton(new ImageIcon(imgBotonP1));
-        BotonP1.setBounds(250, 31, 180, 20);
+        BotonP1.setBounds(223, 31, 210, 20);
         BotonP1.setText("Ataque Especial");
         BotonP1.setForeground(Color.WHITE);
-        BotonP1.setFont(new Font("Arial", Font.BOLD, 18));
+        BotonP1.setFont(new Font("Arial", Font.BOLD, 15));
 
         BotonP1.setHorizontalTextPosition(JButton.CENTER);
         BotonP1.setVerticalTextPosition(JButton.CENTER);
@@ -337,12 +337,12 @@ public final class Game extends JFrame {
         TableroINFO.add(BotonP1);
 
         ImageIcon iconoBtnP2 = new ImageIcon(getClass().getResource("/imagenes/butoncambiado.png"));
-        Image imgBotonP2 = iconoBtnP2.getImage().getScaledInstance(180, 20, Image.SCALE_SMOOTH);
+        Image imgBotonP2 = iconoBtnP2.getImage().getScaledInstance(120, 20, Image.SCALE_SMOOTH);
         BotonP2 = new JButton(new ImageIcon(imgBotonP2));
-        BotonP2.setBounds(220, 63, 120, 20);
+        BotonP2.setBounds(212, 63, 120, 20);
         BotonP2.setText("INVOCAR ZOMBIE");
         BotonP2.setForeground(Color.WHITE);
-        BotonP2.setFont(new Font("Arial", Font.BOLD, 12));
+        BotonP2.setFont(new Font("Arial", Font.BOLD, 9));
 
         BotonP2.setHorizontalTextPosition(JButton.CENTER);
         BotonP2.setVerticalTextPosition(JButton.CENTER);
@@ -350,12 +350,12 @@ public final class Game extends JFrame {
         TableroINFO.add(BotonP2);
 
         ImageIcon iconoBtnP2Atak = new ImageIcon(getClass().getResource("/imagenes/butoncambiado.png"));
-        Image imgBotonP2Atak = iconoBtnP2Atak.getImage().getScaledInstance(180, 20, Image.SCALE_SMOOTH);
+        Image imgBotonP2Atak = iconoBtnP2Atak.getImage().getScaledInstance(120, 20, Image.SCALE_SMOOTH);
         BotonP2Atac = new JButton(new ImageIcon(imgBotonP2Atak));
-        BotonP2Atac.setBounds(360, 63, 110, 20);
+        BotonP2Atac.setBounds(339, 63, 120, 20);
         BotonP2Atac.setText("Atacar con Zombie");
         BotonP2Atac.setForeground(Color.WHITE);
-        BotonP2Atac.setFont(new Font("Arial", Font.BOLD, 15));
+        BotonP2Atac.setFont(new Font("Arial", Font.BOLD, 9));
 
         BotonP2Atac.setHorizontalTextPosition(JButton.CENTER);
         BotonP2Atac.setVerticalTextPosition(JButton.CENTER);
