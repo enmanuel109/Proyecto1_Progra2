@@ -79,11 +79,7 @@ public class Menu_inicio extends JFrame implements ActionListener {
             }
         });
     }
-public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new Menu_inicio().setVisible(true);
-        });
-    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
