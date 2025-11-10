@@ -1974,12 +1974,14 @@ public final class Game extends JFrame {
             BotonP2Atac.setVisible(false);
 
         } else if (resultado == 2 || resultado == 5) {
+            BotonP2Atac.setVisible(false);
             PersonajePorRulta = "Muerte";
             if (hayZombiesEnTablero(Turno)) {
                 BotonP2Atac.setVisible(true);
             } else {
                 BotonP2Atac.setVisible(false);
             }
+            
         }
 
         LabelInfoAtaques.setText("Resultado de Ruleta: " + PersonajePorRulta);
